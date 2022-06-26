@@ -6,9 +6,9 @@ import { CgProfile } from 'react-icons/cg'
 import {IoIosLogOut} from 'react-icons/io'
 import NextLink from 'next/link'
 
-export const Sidebar = () => {
+export const Activities = () => {
   return (
-    <Flex alignItems='center' direction='column' justifyContent='space-between' w='230px' bg='white' h='100vh' borderRightRadius='10px' boxShadow='md' px='20px' py='20px' position='fixed'>
+    <Flex alignItems='center' direction='column' justifyContent='space-between' w='300px' bg='white' h='100vh' borderRightRadius='10px' boxShadow='md' px='20px' py='20px' position='fixed'>
       <Box cursor='pointer' as='a'>
         <NextLink passHref href='/'>
             <Text textStyle='logo' > 🤑DOGWU </Text>
