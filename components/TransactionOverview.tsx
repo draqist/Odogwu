@@ -1,5 +1,5 @@
-import { Box } from '@chakra-ui/react'
-import React from 'react'
+import { Box } from '@chakra-ui/react';
+import React from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -10,6 +10,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
+// @ts-ignore
 import faker from 'faker';
 
 ChartJS.register(
@@ -18,7 +19,7 @@ ChartJS.register(
   BarElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
 );
 
 export const options = {
@@ -34,28 +35,40 @@ export const options = {
   },
 };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August'];
 
 export const data = {
   labels,
   datasets: [
     {
-      label: 'Dataset 1',
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      label: 'Savings',
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 500 })),
+      backgroundColor: 'rgba(53, 162, 235, 0.5)',
+      borderWidth: 1,
+      borderRadius: 6,
     },
     {
-      label: 'Dataset 2',
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: 'rgba(53, 162, 235, 0.5)',
+      label: 'Expenses',
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 500 })),
+      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      borderWidth: 1,
+      borderRadius: 6,
     },
   ],
 };
 
 export const TransactionOverview = () => {
   return (
-    <Box w='100%' >
+    <Box
+      w="100%"
+      bg="white"
+      boxShadow="lg"
+      borderRadius="16px"
+      px="40px"
+      py="40px"
+      mb="40px"
+    >
       <Bar options={options} data={data} />
     </Box>
-  )
-}
+  );
+};

@@ -5,7 +5,7 @@ import { Box, Flex, Text } from '@chakra-ui/react';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const data = {
-  labels: ['Red', 'Blue', 'Yellow',],
+  labels: ['Red', 'Blue', 'Yellow'],
   datasets: [
     {
       label: '# of Votes',
@@ -27,12 +27,24 @@ const data = {
 
 export const ExpenseCard = () => {
   return (
-    <Flex justifyContent='center' direction='column' alignItems='center' h='280px' w='350px' bg='white' borderRadius='12px' boxShadow='lg' mb='20px'>
-      <Text> Expenses </Text>
-      <Box height='200px' w='300px'>
-        <Doughnut data={data} options={{ maintainAspectRatio: false }}/>
-
+    <Flex
+      justifyContent="center"
+      direction="column"
+      alignItems="center"
+      h="280px"
+      w="100%"
+      bg="white"
+      borderRadius="12px"
+      boxShadow="md"
+      mb="20px"
+      px="30px"
+    >
+      <Flex textStyle='logo' w='100%' justifyContent='space-between' alignItems="center">
+        <Text fontSize='20px'> Expenses </Text>
+      </Flex>
+      <Box height="200px" w="300px">
+        <Doughnut data={data} options={{ maintainAspectRatio: false }} />
       </Box>
     </Flex>
-  )
-}
+  );
+};
